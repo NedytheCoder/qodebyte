@@ -1,11 +1,11 @@
 import {
   Button,
-  Card,
   Container,
   Flex,
   Grid,
   Heading,
   Text,
+  Box,
 } from "@radix-ui/themes";
 import style from "./Courses.module.css";
 import Image from "next/image";
@@ -73,7 +73,7 @@ const courses = [
 const Courses = () => {
   return (
     <div
-      className={`${style.main} w-full min-h-screen text-white bg-gray-900 pt-20 p-5`}
+      className={`${style.main} w-full min-h-screen text-white bg-gray-900 p-5 py-32`}
     >
       <Container width={{ initial: "85%" }}>
         <Flex
@@ -93,9 +93,9 @@ const Courses = () => {
       </Container>
       <Grid gap="4" columns={{ initial: "1", sm: "2", md: "3" }}>
         {courses.map((course) => (
-          <Card
+          <Box
             key={course.label}
-            className="group h-[40rem] bg-white text-gray-900 !flex justify-center flex-col gap-5 !rounded-none"
+            className="group h-[40rem] bg-white text-gray-900 !flex justify-center flex-col gap-5 !rounded-none p-3"
           >
             <div className="w-full h-72 overflow-hidden rounded-lg relative p-1">
               <Image
@@ -117,14 +117,14 @@ const Courses = () => {
             <Link href={course.href}>
               <Button className="!w-32 !p-5">Check it out!</Button>
             </Link>
-          </Card>
+          </Box>
         ))}
         <Link
           href="/courses"
-          className="group h-[40rem] bg-transparent border border-white text-white flex justify-center items-center gap-5 transition-colors duration-300 hover:bg-white hover:text-gray-900"
+          className="group h-[40rem] bg-transparent border border-white text-white flex justify-center items-center gap-5 transition-colors duration-300 hover:bg-white flex-col hover:text-gray-900 sm:flex-row"
         >
           <Text size="5" className="transition-colors duration-300">
-            View other courses that`&apos;`ll interest you
+            View other courses that&apos;ll interest you
           </Text>
 
           <span className="w-12 h-12 rounded-full bg-white text-gray-900 flex justify-center items-center transition-colors duration-300 group-hover:bg-gray-900 group-hover:text-white">
