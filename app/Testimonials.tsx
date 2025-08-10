@@ -3,7 +3,7 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <div>
+    <div className="w-full min-h-screen">
       <Text>Testimonials</Text>
       <Heading>What they say about us</Heading>
     </div>

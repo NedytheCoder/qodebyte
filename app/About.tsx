@@ -4,7 +4,7 @@ import business from "@/public/pexels-fauxels-3184660.jpg";
 
 const About = () => {
   return (
-    <div className="h-screen pt-20 md:pt-52">
+    <div className="pt-20 py-28">
       <Container width={{ initial: "85%" }}>
         <Grid
           columns={{ initial: "1", md: "2" }}
