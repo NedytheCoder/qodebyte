@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  Text,
-} from "@radix-ui/themes";
+import { Button, Container, Flex, Grid, Heading, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import business from "@/public/pexels-fauxels-3184660.jpg";
 
@@ -47,7 +39,7 @@ const About = () => {
               professionals, to build, innovate, and excel in the ever-evolving
               tech landscape.
             </Text>
-            <Button style={{ padding: "1.5rem", width: "8rem" }}>
+            <Button style={{ padding: "1.5rem", width: "9rem" }}>
               Learn More
             </Button>
           </Flex>

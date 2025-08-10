@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Container, Flex, Box } from "@radix-ui/themes";
+import { Button, Container, Flex } from "@radix-ui/themes";
 import Link from "next/link";
 import { FaCode } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -35,7 +35,7 @@ const Navbar = () => {
       className={`${
         scrollY > 70
           ? "fixed bg-gray-950"
-          : "absolute bg-transparent border-b-1 border-b-gray-500"
+          : "absolute bg-transparent border-b-gray-500"
       } w-full top-0 py-5 px-5 z-2 text-white`}
     >
       <Container>
@@ -97,8 +97,8 @@ const Navbar = () => {
 
           {/* Modified NavLinks for mobile screens */}
           <div
-            className={`absolute bg-gray-900 w-full top-13 p-5 block sm:hidden transition-opacity duration-300 ease-in-out ${
-              responsiveNav ? "opacity-100" : "opacity-0"
+            className={`absolute bg-gray-900 w-full top-13 p-5 block sm:hidden transition-all duration-300 ease-in-out ${
+              responsiveNav ? "right-0" : "right-[110%]"
             }`}
           >
             <Flex gap="5" align="center" direction="column">

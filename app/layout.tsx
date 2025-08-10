@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
-import { Theme, ThemePanel } from "@radix-ui/themes";
+import { Theme } from "@radix-ui/themes";
 import "./globals.css";
 import { Oswald } from "next/font/google";
 
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const oswald = Oswald({
   weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-oswald",
+  subsets: ["cyrillic", "cyrillic-ext"],
 });
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={oswald.variable}>
-      <body>
+      <body className={oswald.variable}>
         <Theme>{children}</Theme>
       </body>
     </html>

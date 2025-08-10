@@ -1,0 +1,7 @@
+.main{
+    clip-path: polygon(  0vw 5vh,
+  50vw 0vh,
+  100vw 5vh,
+  100% 100%,
+  0% 100%);
+}
