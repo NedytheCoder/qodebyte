@@ -1,6 +1,7 @@
 import About from "./About";
 import Contact from "./Contact";
 import Courses from "./courses/Courses";
+import Footer from "./Footer";
 import Hero from "./hero/Hero";
 import Navbar from "./Navbar";
 import Testimonials from "./testimonial/Testimonials";
@@ -16,6 +17,7 @@ export default function Home() {
       <WhyUs />
       <Testimonials />
       <Contact />
+      <Footer />
     </div>
   );
 }

@@ -1,19 +1,14 @@
-import { Box, Grid, Heading } from "@radix-ui/themes";
-import React from "react";
+import { Flex, Button, Container, Grid, Heading, Text } from "@radix-ui/themes";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdCall } from "react-icons/md";
+import { ContactAnimation } from "./Animations";
 
 const Contact = () => {
   return (
-    <div className="w-full">
-      <Grid>
-        <Grid>
-          <Box className="bg-red-300">Box1</Box>
-          <Box className="bg-blue-300">Box2</Box>
-        </Grid>
-        <div>
-          <Heading className="bg-gray-900">CONNECT WITH US</Heading>
-          <form></form>
-        </div>
-      </Grid>
+    <div className="w-full py-24 bg-gray-100" id="contact">
+      <Container width={{ initial: "85%" }}>
+        <ContactAnimation />
+      </Container>
     </div>
   );
 };

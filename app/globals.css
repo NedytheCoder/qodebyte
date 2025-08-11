@@ -4,3 +4,7 @@
 .radix-themes {
 	--default-font-family: var(--font-oswald);
 }
+
+html{
+	scroll-behavior:smooth ;
+}
