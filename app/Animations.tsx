@@ -12,7 +12,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image, { StaticImageData } from "next/image";
-import peopleLearning from "@/public/pexels-fauxels-3184660.jpg";
+import peopleLearning from "@/public/imgs/pexels-fauxels-3184660.jpg";
 import style from "./testimonial/Testimonial.module.css";
 import { MdCall } from "react-icons/md";
 

@@ -1,10 +1,10 @@
 import style from "./Courses.module.css";
 import { StaticImageData } from "next/image";
-import python from "@/public/python.jpg";
-import AI from "@/public/AI.jpg";
-import HTML from "@/public/HTML.jpg";
-import C from "@/public/c.jpg";
-import ethical from "@/public/ethical.jpg";
+import python from "@/public/imgs/python.jpg";
+import AI from "@/public/imgs/AI.jpg";
+import HTML from "@/public/imgs/HTML.jpg";
+import C from "@/public/imgs/c.jpg";
+import ethical from "@/public/imgs/ethical.jpg";
 import { CourseCards, CourseTitle } from "../Animations";
 import { Container } from "@radix-ui/themes";
 

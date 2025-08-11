@@ -2,10 +2,15 @@
 
 /* For some reason best know to radix and next, this must be declared to use a custom font */
 .radix-themes {
-	--default-font-family: var(--font-oswald);
+	--default-font-family: var(--font-oswald) !important;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/oswald/vertopal.com_Oswald-Light.woff2");
 }
 
 html, body{
 	scroll-behavior:smooth ;
-	font-family: var(--font-oswald);
+	font-family: "Oswald", sans-serif !important;
 }
