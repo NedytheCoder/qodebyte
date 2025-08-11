@@ -1,8 +1,6 @@
 "use client";
 
-import { Button, Container, Flex } from "@radix-ui/themes";
-import Link from "next/link";
-import { FaCode } from "react-icons/fa";
+import { Container } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 import { NavbarAnimation } from "./Animations";
 

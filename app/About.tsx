@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Container } from "@radix-ui/themes";
 
 import { AboutPageAnimation } from "./Animations";
 

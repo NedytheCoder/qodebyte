@@ -2,7 +2,7 @@
 
 import { Flex, Heading, Button, Text, Grid, Box } from "@radix-ui/themes";
 import Link from "next/link";
-import { ReactElement, RefObject, useEffect, useRef } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -457,10 +457,12 @@ export function TestimonialAnimation({
                        w-64 h-70 sm:w-72 md:w-80 lg:w-96"
             >
               <div className="flex items-center space-x-4">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="rounded-full object-cover"
+                  width={50}
+                  height={5}
                 />
                 <div>
                   <h3 className="text-lg font-semibold">{testimonial.name}</h3>

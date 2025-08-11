@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Container } from "@radix-ui/themes";
 import { SiCodementor } from "react-icons/si";
 import { FaBook } from "react-icons/fa";
 import { FaProjectDiagram } from "react-icons/fa";

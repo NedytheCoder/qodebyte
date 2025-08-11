@@ -1,6 +1,4 @@
-import { Flex, Button, Container, Grid, Heading, Text } from "@radix-ui/themes";
-import { FaLocationDot } from "react-icons/fa6";
-import { MdCall } from "react-icons/md";
+import { Container } from "@radix-ui/themes";
 import { ContactAnimation } from "./Animations";
 
 const Contact = () => {
