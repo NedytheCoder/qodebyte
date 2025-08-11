@@ -5,6 +5,7 @@
 	--default-font-family: var(--font-oswald);
 }
 
-html{
+html, body{
 	scroll-behavior:smooth ;
+	font-family: var(--font-oswald);
 }

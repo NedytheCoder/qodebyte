@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const oswald = Oswald({
   weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-oswald",
-  subsets: ["cyrillic", "cyrillic-ext"],
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
 });
 
 export default function RootLayout({
