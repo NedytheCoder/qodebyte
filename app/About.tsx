@@ -17,7 +17,7 @@ const About = () => {
             gap={{ initial: "3", md: "5" }}
           >
             <Text as="p" weight="light" size={{ initial: "3", md: "5" }}>
-              About Us
+              ABOUT US
             </Text>
             <Heading as="h2" size={{ initial: "6", md: "8" }}>
               ABOUT QODEBYTE TECH ACADEMY?

@@ -3,8 +3,8 @@ import Contact from "./Contact";
 import Courses from "./courses/Courses";
 import Hero from "./hero/Hero";
 import Navbar from "./Navbar";
-import Testimonials from "./Testimonials";
-import WhyUs from "./whyus/WhyUs";
+import Testimonials from "./testimonial/Testimonials";
+import WhyUs from "./WhyUs";
 
 export default function Home() {
   return (

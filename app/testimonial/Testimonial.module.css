@@ -1,0 +1,19 @@
+.main{
+    background: url(../../public/pexels-kindelmedia-6774432.jpg) center/cover no-repeat;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* black overlay, 50% opacity */
+  z-index: -1;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

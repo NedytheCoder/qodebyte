@@ -84,10 +84,10 @@ const Courses = () => {
           mb="7"
         >
           <Heading as="h2" size={{ initial: "7", md: "9" }}>
-            Our Courses
+            OUR COURSES
           </Heading>
           <Text size={{ initial: "4", md: "7" }} weight="light">
-            Top picks
+            TOP PICKS
           </Text>
         </Flex>
       </Container>

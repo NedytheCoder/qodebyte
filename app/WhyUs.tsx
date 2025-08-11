@@ -32,7 +32,7 @@ const WhyUs = () => {
     },
   ];
   return (
-    <div className="w-full py-12">
+    <div className="w-full py-28">
       <Container width={{ initial: "85%" }}>
         <Grid
           columns={{ initial: "1", sm: "1", md: "30% 70%" }}
@@ -46,7 +46,7 @@ const WhyUs = () => {
             gap={{ initial: "3" }}
             align={{ initial: "center", md: "start" }}
           >
-            <Text size={{ initial: "6", md: "9" }}>Why choose </Text>
+            <Text size={{ initial: "6", md: "9" }}>WHY CHOOSE</Text>
             <span className="text-[var(--accent-9)] font-bold text-4xl md:text-7xl">
               QODEBYTE
             </span>
