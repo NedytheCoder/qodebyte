@@ -293,6 +293,7 @@ export function CourseCards({
               alt={course.label}
               fill
               className="object-cover transition-transform group-hover:scale-125"
+              priority
             />
           </div>
           <Heading as="h3">{course.label}</Heading>
