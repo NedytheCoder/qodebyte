@@ -463,6 +463,7 @@ export function TestimonialAnimation({
                   className="rounded-full object-cover"
                   width={50}
                   height={5}
+                  unoptimized
                 />
                 <div>
                   <h3 className="text-lg font-semibold">{testimonial.name}</h3>
