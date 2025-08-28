@@ -2,7 +2,7 @@
 
 import { Flex, Heading, Button, Text, Grid, Box } from "@radix-ui/themes";
 import Link from "next/link";
-import { ReactElement, useEffect, useRef } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -42,7 +42,7 @@ export function NavbarAnimation({
       className="relative -translate-y-48"
       id="onLoadNav"
     >
-      <Link href="">
+      <Link href="#hero">
         <div className="text-[21px] md:text-[27px]">
           <span className="inline-flex items-center">
             Q<FaCode />B
@@ -85,13 +85,13 @@ export function NavbarAnimation({
               {link.label}
             </Link>
           ))}
-          <Link href="#!">
+          <Link href="#contact">
             <Button variant="soft" color="cyan" className="cursor-pointer">
-              Login
+              Get Started
             </Button>
           </Link>
-          <Link href="#!">
-            <Button>Sign Up</Button>
+          <Link href="#courses">
+            <Button>View Courses</Button>
           </Link>
         </Flex>
       </div>
@@ -109,13 +109,13 @@ export function NavbarAnimation({
               {link.label}
             </Link>
           ))}
-          <Link href="#!">
+          <Link href="#contact">
             <Button variant="soft" color="cyan" className="cursor-pointer">
-              Login
+              Get Started
             </Button>
           </Link>
-          <Link href="#!">
-            <Button>Sign Up</Button>
+          <Link href="#courses">
+            <Button>View Courses</Button>
           </Link>
         </Flex>
       </div>
@@ -140,9 +140,14 @@ export function LandInAnimation() {
       gap="5"
       id="onLoad"
     >
+      <div className="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-semibold">
+        🚀 LIMITED TIME: 20% OFF ALL COURSES
+      </div>
+      
       <Text weight="light" size={{ initial: "3", sm: "4", md: "5" }}>
         THE PATH OF EXCELLENCE
       </Text>
+      
       <Heading
         as="h1"
         size={{ initial: "6", sm: "7", md: "9" }}
@@ -150,11 +155,38 @@ export function LandInAnimation() {
       >
         UNLOCK YOUR SOFTWARE POTENTIAL WITH QODEBYTE ACADEMY
       </Heading>
-      <Link href="" className="cursor-pointer">
-        <Button size={{ initial: "3", sm: "4" }}>
-          Enroll Now <FaArrowRight size={10} />
-        </Button>
-      </Link>
+      
+      <Text size={{ initial: "2", sm: "3", md: "4" }} className="max-w-2xl text-gray-200">
+        Join 500+ students already learning. Master web development, AI, cybersecurity, and more with expert instructors and hands-on projects.
+      </Text>
+      
+      <Flex gap="3" direction={{ initial: "column", sm: "row" }} className="w-full justify-center">
+        <Link href="#courses" className="cursor-pointer">
+          <Button size={{ initial: "3", sm: "4" }} className="bg-yellow-500 text-black hover:bg-yellow-400">
+            Explore Courses <FaArrowRight size={10} />
+          </Button>
+        </Link>
+        <Link href="#contact" className="cursor-pointer">
+          <Button size={{ initial: "3", sm: "4" }} variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+            Free Consultation
+          </Button>
+        </Link>
+      </Flex>
+      
+      <div className="flex items-center gap-6 mt-4 text-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
+          <span>4.9/5 Rating</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span>👨‍💻</span>
+          <span>Expert Instructors</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span>💼</span>
+          <span>Job Ready Skills</span>
+        </div>
+      </div>
     </Flex>
   );
 }
@@ -262,6 +294,10 @@ export function CourseCards({
     description: string;
     image: StaticImageData;
     rating: number;
+    duration: string;
+    price: string;
+    level: string;
+    students: number;
   }[];
 }) {
   useEffect(() => {
@@ -280,46 +316,78 @@ export function CourseCards({
     });
   }, []);
   return (
-    <Grid gap="4" columns={{ initial: "1", sm: "2", md: "3" }}>
+    <Grid gap="6" columns={{ initial: "1", sm: "2", md: "3" }}>
       {courses.map((course) => (
         <Box
           key={course.label}
-          className="group h-[40rem] bg-white text-gray-900 !flex justify-center flex-col gap-5 !rounded-none p-3"
+          className="group h-auto bg-white text-gray-900 !flex justify-center flex-col gap-4 !rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
           id="card"
         >
-          <div className="w-full h-72 overflow-hidden rounded-lg relative p-1">
+          <div className="w-full h-48 overflow-hidden rounded-lg relative">
             <Image
               src={course.image}
               alt={course.label}
               fill
-              className="object-cover transition-transform group-hover:scale-125"
+              className="object-cover transition-transform group-hover:scale-110"
               priority
             />
+            <div className="absolute top-2 right-2 bg-yellow-500 text-black px-2 py-1 rounded-full text-xs font-semibold">
+              {course.level}
+            </div>
+            <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded-full text-xs">
+              {course.duration}
+            </div>
           </div>
-          <Heading as="h3">{course.label}</Heading>
-          <div className="rating">{course.rating}/5</div>
+          
+          <div className="flex justify-between items-start">
+            <Heading as="h3" size="4" className="flex-1">{course.label}</Heading>
+            <div className="text-right">
+              <div className="text-2xl font-bold text-green-600">{course.price}</div>
+              <div className="text-sm text-gray-500">USD</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-1">
+              <span className="text-yellow-400">⭐</span>
+              <span>{course.rating}/5</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span>👥</span>
+              <span>{course.students} students</span>
+            </div>
+          </div>
+          
           <Text
             as="p"
-            className="text-justify"
-            size={{ initial: "3", md: "4" }}
+            className="text-justify text-gray-600"
+            size={{ initial: "2", md: "3" }}
           >
             {course.description}
           </Text>
+          
           <Link href={course.href}>
-            <Button className="!w-32 !p-5">Check it out!</Button>
+            <Button className="!w-full !p-3 bg-blue-600 hover:bg-blue-700">
+              Enroll Now
+            </Button>
           </Link>
         </Box>
       ))}
       <Link
         href="/courses"
-        className="group h-[40rem] bg-transparent border border-white text-white flex justify-center items-center gap-5 transition-colors duration-300 hover:bg-white flex-col hover:text-gray-900 sm:flex-row"
+        className="group h-auto bg-gradient-to-br from-blue-600 to-purple-600 text-white flex justify-center items-center gap-5 transition-all duration-300 hover:from-blue-700 hover:to-purple-700 flex-col p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2"
         id="card"
       >
-        <Text size="5" className="transition-colors duration-300">
-          View other courses that&apos;ll interest you
-        </Text>
+        <div className="text-center">
+          <Text size="6" className="font-bold mb-2">
+            View All Courses
+          </Text>
+          <Text size="3" className="opacity-90">
+            Discover our complete curriculum with 20+ courses
+          </Text>
+        </div>
 
-        <span className="w-12 h-12 rounded-full bg-white text-gray-900 flex justify-center items-center transition-colors duration-300 group-hover:bg-gray-900 group-hover:text-white">
+        <span className="w-12 h-12 rounded-full bg-white text-blue-600 flex justify-center items-center transition-all duration-300 group-hover:scale-110">
           <FaArrowRight />
         </span>
       </Link>
@@ -499,6 +567,39 @@ export function TestimonialAnimation({
 
 //CONTACT ANIMATION
 export function ContactAnimation() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -539,10 +640,10 @@ export function ContactAnimation() {
         >
           <MdCall size={75} className="text-[var(--accent-9)]" />
           <Text size={{ initial: "5", md: "7" }} className="text-gray-700">
-            xxxxx@gmail.com
+            contact@qodebyte.com
           </Text>
           <Text size={{ initial: "5", md: "7" }} className="text-gray-700">
-            +234-xxx-xx-xxx
+            +33-1-XX-XX-XX-XX
           </Text>
         </Flex>
       </Grid>
@@ -550,42 +651,73 @@ export function ContactAnimation() {
         <Heading className="bg-gray-900 text-white p-5">
           CONNECT WITH US
         </Heading>
-        <form className="space-y-5 p-5">
+        <form onSubmit={handleSubmit} className="space-y-5 p-5">
+          {submitStatus === 'success' && (
+            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+              Thank you! Your message has been sent successfully.
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              Something went wrong. Please try again.
+            </div>
+          )}
+          
           <input
             type="text"
             id="name"
             name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="LASTNAME FIRSTNAME"
           />
           <input
-            type="text"
-            id="name"
-            name="name"
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="EMAIL"
           />
           <input
-            type="text"
-            id="name"
-            name="name"
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="PHONE NUMBER"
           />
           <input
             type="text"
-            id="name"
-            name="name"
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleInputChange}
+            required
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="SUBJECT"
           />
           <textarea
             id="message"
             name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            required
             className="w-full h-48 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             placeholder="MESSAGE"
           />
-          <Button className="!text-xl !p-5">Submit</Button>
+          <Button 
+            type="submit" 
+            className="!text-xl !p-5 w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : 'Submit'}
+          </Button>
         </form>
       </div>
     </Grid>

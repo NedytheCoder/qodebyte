@@ -1,56 +1,51 @@
+import { Container } from "@radix-ui/themes";
 import { TestimonialAnimation } from "../Animations";
-import style from "./Testimonial.module.css";
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    role: "Frontend Developer at Google",
+    text: "Qodebyte Academy transformed my career. The hands-on projects and expert instructors gave me the skills I needed to land my dream job at Google. The community support was incredible!",
+    image: "/imgs/pexels-fauxels-3184660.jpg"
+  },
+  {
+    name: "Michael Chen",
+    role: "AI Engineer at Tesla",
+    text: "I came to Qodebyte with zero programming experience. Now I'm building AI systems at Tesla! The curriculum is perfectly structured for beginners to advanced learners.",
+    image: "/imgs/pexels-fauxels-3182774.jpg"
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Cybersecurity Specialist",
+    text: "The ethical hacking course was mind-blowing. Real-world scenarios, hands-on labs, and industry experts made learning complex security concepts actually fun and engaging.",
+    image: "/imgs/pexels-kindelmedia-6774432.jpg"
+  },
+  {
+    name: "David Kim",
+    role: "Full-Stack Developer",
+    text: "Qodebyte's project-based approach helped me build a portfolio that impressed every employer. I went from knowing nothing to building full applications in just 6 months.",
+    image: "/imgs/pexels-fauxels-3184660.jpg"
+  },
+  {
+    name: "Lisa Thompson",
+    role: "Data Scientist",
+    text: "The Python course was exceptional. I learned not just the language, but how to think like a programmer. The data science projects were exactly what I needed for my career transition.",
+    image: "/imgs/pexels-fauxels-3182774.jpg"
+  },
+  {
+    name: "James Wilson",
+    role: "Software Architect",
+    text: "As an experienced developer, I was skeptical about online courses. But Qodebyte's advanced topics and real-world applications exceeded my expectations. Highly recommended!",
+    image: "/imgs/pexels-kindelmedia-6774432.jpg"
+  }
+];
 
 const Testimonials = () => {
-  const testimonials: {
-    name: string;
-    role: string;
-    text: string;
-    image: string;
-  }[] = [
-    {
-      name: "Jane Doe",
-      role: "CEO, BrightTech",
-      text: "This service exceeded my expectations. Highly recommend to anyone who values quality.",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
-    },
-    {
-      name: "Michael Smith",
-      role: "Software Engineer",
-      text: "Absolutely fantastic experience from start to finish. I'll definitely be back.",
-      image: "https://randomuser.me/api/portraits/men/45.jpg",
-    },
-    {
-      name: "Sophia Lee",
-      role: "Marketing Manager",
-      text: "The team was professional, attentive, and went above and beyond to help us succeed.",
-      image: "https://randomuser.me/api/portraits/women/12.jpg",
-    },
-    {
-      name: "David Johnson",
-      role: "Entrepreneur",
-      text: "Five stars all the way. Couldn't have asked for a better experience.",
-      image: "https://randomuser.me/api/portraits/men/21.jpg",
-    },
-    {
-      name: "Emma Roberts",
-      role: "Creative Director, PixelCraft",
-      text: "From start to finish, the process was seamless. They understood my vision and brought it to life beautifully.",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-    {
-      name: "Liam Anderson",
-      role: "Product Manager, InnovateX",
-      text: "The attention to detail and dedication to quality blew me away. Easily one of the best experiences I've had working with a team.",
-      image: "https://randomuser.me/api/portraits/men/36.jpg",
-    },
-  ];
-
   return (
-    <div
-      className={`${style.main} relative w-full h-screen flex flex-col text-white z-1 items-center justify-center`}
-    >
-      <TestimonialAnimation testimonials={testimonials} />
+    <div className="w-full min-h-screen bg-white py-32" id="testimonials">
+      <Container width={{ initial: "85%" }}>
+        <TestimonialAnimation testimonials={testimonials} />
+      </Container>
     </div>
   );
 };
